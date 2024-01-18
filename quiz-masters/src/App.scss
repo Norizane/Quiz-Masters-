@@ -1,0 +1,76 @@
+.logIn{
+  background-color: #D9DCD6;
+
+  .titleContainer{
+    padding-bottom: 90px;
+
+    .title{
+      font-size: 100px;
+      color: white;
+    }
+  }
+
+  .logInForm{
+    background-color: #15616D;
+    width: 550px;
+    height: 350px;
+  }
+
+  .logInInputs{
+    outline: none;
+    width: 400px;
+  }
+
+  .singUpButton{
+    background-color: #15616D;
+  }
+
+  .form-control::placeholder { 
+    color: white;
+  
+  }
+
+}
+
+
+
+
+
+.singUp{
+  background-color: #15616D;
+
+  .titleContainer{
+    padding-bottom: 90px;
+
+    .title{
+      font-size: 100px;
+      color: white;
+    }
+  }
+
+  .singUpInputs{
+    outline: none;
+    width: 400px;
+    color: #15616D;
+  }
+
+  .singUpForm{
+    background-color:#D9DCD6;
+    width: 550px;
+    height: 350px;
+  }
+
+  .form-control::placeholder { 
+    color:#15616D;
+  
+  }
+
+  .singUpButton{
+    background-color: #D9DCD6;
+    color: #15616D;
+  }
+
+  .submitButton{
+    color: #15616D;
+  }
+}
