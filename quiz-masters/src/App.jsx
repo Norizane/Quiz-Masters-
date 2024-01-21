@@ -1,5 +1,6 @@
-import LogInForm from "./logIn";
-import SignUpForm from "./SignUp"
+import LogInForm from "./assets/LogIn";
+import SignUpForm from "./assets/SignUp"
+import HomePage from "./assets/Home";
 import {BrowserRouter, Routes, Route} from "react-router-dom"
 
 function App() {
@@ -8,12 +9,14 @@ function App() {
   return (
     
    <BrowserRouter>
-    <>
      <Routes>
-        <Route path="/" element={<LogInForm/>}></Route>
-        <Route path="/home" element={<SignUpForm/>}></Route>
+        <Route path="/LogInForm" element={<LogInForm/>}></Route>
+        <Route path="/SignUpForm" element={<SignUpForm/>}></Route>
+        <Route path="/HomePage" element={<HomePage/>}></Route>
+        {/* <Route path="/settings" element={<settings/>}></Route>
+        <Route path="/MillionairesCr" element={<MillionairesCr/>}></Route>
+        <Route path="/Millionaires" element={<Millionaires/>}></Route> */}
      </Routes>
-    </>
   </BrowserRouter> 
 
   )
