@@ -4,8 +4,10 @@ import GameModeCarousel from "./components/Carousel"
 const HomePage = () => {
   return (
     <>
-      <NavBar/>
-      <GameModeCarousel/>
+      <div className="secondaryColor vh-100">
+        <NavBar/>
+        <GameModeCarousel/>
+      </div>
     </>
   );
 };
