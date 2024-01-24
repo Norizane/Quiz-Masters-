@@ -1,5 +1,5 @@
 import React from "react";
-import { Form, Button, Col, Row } from "react-bootstrap";
+import { Form, Button, Col, Row, Container } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import Alert from "react-bootstrap/Alert";
 import { useState } from "react";
@@ -25,7 +25,7 @@ const SignUp = () => {
     
     if (!passwordValid) {
       errorAlerts.push(
-        <Alert key="password-error" variant="danger">
+        <Alert  className="wm-50" key="password-error" variant="danger">
           Your password needs to contain a minimum of eight characters, at least one uppercase letter, one lowercase letter, and one number
         </Alert>
       );
@@ -33,7 +33,7 @@ const SignUp = () => {
   
     if (!emailValid) {
       errorAlerts.push(
-        <Alert key="email-error" variant="danger">
+        <Alert  className="wm-25" key="email-error" variant="danger">
           Invalid email address
         </Alert>
       );
@@ -65,13 +65,12 @@ const SignUp = () => {
 
 
   return (
-    <>
-      <div className="singUp vh-100 d-flex justify-content-center align-items-center flex-column">
-        <div className="text-center">
-          <div className="titleContainer">
+      <Container className="singUp  mw-100 vh-100 d-flex justify-content-center align-items-center flex-column">
+        <Row className="text-center">
+          <Container className="titleContainer">
             <h1 className="title">Quiz Masters</h1>
-          </div>
-          <div className="singUpForm text-white rounded w-570px d-flex justify-content-center align-items-center">
+          </Container>
+          <Container className="singUpForm text-white rounded w-570px d-flex justify-content-center align-items-center">
             <Form className="p-4" onSubmit={handleSubmit}>
               <Form.Group className="mb-4 mt-4" controlId="formBasicEmail">
                 <Form.Control
@@ -102,23 +101,24 @@ const SignUp = () => {
                 Submit
               </Button>
             </Form>
-          </div>
+          </Container>
+          <Container  className="mt-4 wm-100 d-flex justify-content-center">
           <Button
-            className="singUpButton mt-4"
+            className="singUpButton wm-25"
             onClick={() => navigate("/LogInForm")}
           >
             go back to logIn
           </Button>
-        </div>
-       
-        <Row className="mt-4 d-flex w-50">
+          </Container>
+        </Row>
+       <Container  className="mt-4 wm-100 d-flex justify-content-center ">
+        <Row>
           {Validation().map((alert, index) => (
-            <Row key={index}>{alert}</Row>
+            <Container  key={index}>{alert}</Container>
           ))}
         </Row>
-       
-      </div>
-    </>
+      </Container>
+      </Container>
   );
 };
 

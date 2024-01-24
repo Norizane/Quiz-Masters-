@@ -1,4 +1,4 @@
-import { Form, Button } from "react-bootstrap";
+import { Form, Button, Container, Row, Col } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import Alert from "react-bootstrap/Alert";
 import { signInWithEmailAndPassword } from "firebase/auth";
@@ -25,12 +25,12 @@ const LogIn = () => {
    }
 
   return (
-    <div className="logIn vh-100 d-flex justify-content-center align-items-center flex-column">
-      <div className="text-center">
-        <div className="titleContainer">
+    <Container className="logIn mw-100 vh-100 d-flex justify-content-center align-items-center flex-column">
+      <Row className="text-center">
+        <Container className="titleContainer ">
           <h1 className="title">Quiz Masters</h1>
-        </div>
-        <div className="logInForm text-white rounded w-570px d-flex justify-content-center align-items-center">
+        </Container>
+        <Container className="logInForm text-white rounded w-570px d-flex justify-content-center align-items-center">
           <Form className="p-4" onSubmit={handleSubmit}>
             <Form.Group className="mb-4 mt-4" controlId="formBasicEmail">
               <Form.Control
@@ -63,20 +63,22 @@ const LogIn = () => {
               Submit
             </Button>
           </Form>
-        </div>
+        </Container>
+      </Row>
+      <Container  className="mt-4 wm-100 d-flex justify-content-center">
         <Button
-          className="singUpButton mt-4"
+        className="singUpButton wm-25"
           onClick={() => navigate("/SignUpForm")}
         >
           don't have account ? sign up
         </Button>
-      </div>
-      <div>
-          <Alert className="mt-4" key={"danger"} variant={"danger"}>
+      </Container>
+      <Container className="mt-4 wm-100 d-flex justify-content-center ">
+          <Alert className="wm-50"  key={"danger"} variant={"danger"}>
             this account does not exist, please check your email or password
           </Alert>
-      </div>
-    </div>
+      </Container>
+    </Container>
   );
 };
 

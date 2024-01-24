@@ -1,11 +1,11 @@
-import { Carousel } from "react-bootstrap";
+import { Carousel, Container, Col } from "react-bootstrap";
 import FirstPhoto from "../images/p1.jpeg";
 import SecondPhoto from "../images/p2.jpeg";
 import ThirdPhoto from "../images/p3.webp";
 const GameModeCarousel = () => {
   return (
-    <>
-      <Carousel fade>
+    <Container className="w-75 h-50">
+      <Carousel fade className="secondaryColor">
         <Carousel.Item className="d-flex primaryColor align-items-center justify-content-center">
         <img src={FirstPhoto} alt="Pasja informatyki" />
           <Carousel.Caption>
@@ -14,7 +14,7 @@ const GameModeCarousel = () => {
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item className="d-flex millionairesPrimaryColor  align-items-center justify-content-center">
-        <img src={SecondPhoto} alt=" FirstPhoto" />
+        <img className="millionairesPrimaryColor vh-75" src={SecondPhoto} alt=" FirstPhoto" />
           <Carousel.Caption>
             <h3>Second slide label</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
@@ -30,7 +30,7 @@ const GameModeCarousel = () => {
           </Carousel.Caption>
         </Carousel.Item>
       </Carousel>
-    </>
+    </Container>
   );
 };
 

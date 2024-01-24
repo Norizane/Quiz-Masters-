@@ -1,13 +1,14 @@
 import NavBar from "./components/NavBar"
 import GameModeCarousel from "./components/Carousel"
+import { Container } from "react-bootstrap";
 
 const HomePage = () => {
   return (
     <>
-      <div className="secondaryColor vh-100">
+      <Container className="secondaryColor vh-100 mw-100">
         <NavBar/>
         <GameModeCarousel/>
-      </div>
+      </Container>
     </>
   );
 };
