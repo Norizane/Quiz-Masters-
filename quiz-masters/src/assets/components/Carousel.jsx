@@ -14,7 +14,7 @@ const GameModeCarousel = () => {
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item className="d-flex millionairesPrimaryColor  align-items-center justify-content-center">
-        <img className="millionairesPrimaryColor vh-75" src={SecondPhoto} alt=" FirstPhoto" />
+        <img src={SecondPhoto} alt=" FirstPhoto" />
           <Carousel.Caption>
             <h3>Second slide label</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>

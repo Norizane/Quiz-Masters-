@@ -74,7 +74,7 @@ const LogIn = () => {
         </Button>
       </Container>
       <Container className="mt-4 wm-100 d-flex justify-content-center ">
-          <Alert className="wm-50"  key={"danger"} variant={"danger"}>
+          <Alert className="invisible wm-50"  key={"danger"} variant={"danger"}>
             this account does not exist, please check your email or password
           </Alert>
       </Container>

@@ -21,10 +21,10 @@ const NavBar = () => {
   }
 
   return(
-    <>
-     <Navbar key={false} expand={false} className="bg-body-tertiary mb-3">
+    <Container className="mw-100 p-0 m-0 ">
+     <Navbar key={false} expand={false} className="primaryColor mb-3 ">
         <Container fluid>
-          <Navbar.Brand href="#">Navbar Offcanvas</Navbar.Brand>
+          <Navbar.Brand className="text-white" href="#">Navbar Offcanvas</Navbar.Brand>
           <Navbar.Toggle className="outline-none" aria-controls={`offcanvasNavbar-expand-${false}`} />
           <Navbar.Offcanvas
             id={`offcanvasNavbar-expand-${false}`}
@@ -49,7 +49,7 @@ const NavBar = () => {
           </Navbar.Offcanvas>
         </Container>
       </Navbar>
-    </>
+    </Container>
   )
 }
 
