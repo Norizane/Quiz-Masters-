@@ -1,4 +1,4 @@
-import { Form, Button, Row, Container } from "react-bootstrap";
+import { Form, Button, Row, Container,Fade } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import Alert from "react-bootstrap/Alert";
 import { useState } from "react";
@@ -10,7 +10,7 @@ const SignUp = () => {
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
   const navigateBack = useNavigate();
-  const [alertVisible, setAlertVisible] = useState(false);
+  const [open, setOpen] = useState(false);
 
   const Validation = () => {
     const passwordRegx = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/;
@@ -43,10 +43,15 @@ const SignUp = () => {
       const errorMessages = Validation();
 
       if (errorMessages.length > 0) {
-        setAlertVisible(true);
-        return;
-      }
+        setOpen(true);
 
+        setTimeout(() => {
+          setOpen(false);
+        }, 4000);
+        
+      }
+       
+    
       const userCredential = await createUserWithEmailAndPassword(
         dataBase,
         email,
@@ -69,7 +74,12 @@ const SignUp = () => {
           <h1 className="title">Quiz Masters</h1>
         </Container>
         <Container className="singUpForm text-white rounded w-570px d-flex justify-content-center align-items-center">
-          <Form className="p-4" onSubmit={handleSubmit}>
+          <Form
+            className="p-4"
+            onSubmit={handleSubmit}
+            aria-controls="example-fade-text"
+            aria-expanded={open}
+          >
             <Form.Group className="mb-4 mt-4" controlId="formBasicEmail">
               <Form.Control
                 className="bg-transparent border-1 border-white"
@@ -100,7 +110,7 @@ const SignUp = () => {
             </Button>
           </Form>
         </Container>
-        <Container className="mt-4 wm-100 d-flex justify-content-center">
+        <Container className="mt-4 wm-100 d-flex justify-content-center ">
           <Button
             className="singUpButton wm-25"
             onClick={() => navigate("/LogInForm")}
@@ -109,20 +119,25 @@ const SignUp = () => {
           </Button>
         </Container>
       </Row>
-      <Container className="mt-4 wm-100 d-flex justify-content-center">
-        <Row
-          id="alertRow"
-          className={`d-flex flex-column align-items-center mb-auto ${
-            alertVisible ? "alertVisible" : "alertInvisible"
-          }`}
-        >
-          {Validation().map((alert, index) => (
-            <Alert className="w-50" variant="danger" key={index}>
-              {alert}
-            </Alert>
-          ))}
-        </Row>
-      </Container>
+      <Fade in={open}>
+        <Container className="mt-4 wm-100 d-flex justify-content-center alertContainer">
+          <Row
+            id="alertRow"
+            className="d-flex flex-column align-items-center mb-auto"
+          >
+            {Validation().map((alert, index) => (
+              <Alert
+                id="example-fade-text"
+                className="w-50"
+                variant="danger"
+                key={index}
+              >
+                {alert}
+              </Alert>
+            ))}
+          </Row>
+        </Container>
+      </Fade>
     </Container>
   );
 };

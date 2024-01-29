@@ -1,4 +1,4 @@
-import { Form, Button, Container, Row, Col } from "react-bootstrap";
+import { Form, Button, Container, Row,Fade  } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import Alert from "react-bootstrap/Alert";
 import { signInWithEmailAndPassword } from "firebase/auth";
@@ -9,6 +9,7 @@ const LogIn = () => {
   const navigateToHome = useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [open, setOpen] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -21,7 +22,14 @@ const LogIn = () => {
      navigateToHome("/HomePage")
     } catch (error) {
      // console.error(error)
+     setOpen(true);
+
+     setTimeout(() => {
+      setOpen(false);
+    }, 4000);
+    
     }
+
    }
 
   return (
@@ -31,7 +39,12 @@ const LogIn = () => {
           <h1 className="title">Quiz Masters</h1>
         </Container>
         <Container className="logInForm text-white rounded w-570px d-flex justify-content-center align-items-center">
-          <Form className="p-4" onSubmit={handleSubmit}>
+          <Form
+            className="p-4"
+            onSubmit={handleSubmit}
+            aria-controls="example-fade-text"
+            aria-expanded={open}
+          >
             <Form.Group className="mb-4 mt-4" controlId="formBasicEmail">
               <Form.Control
                 className="bg-transparent border-1 border-white"
@@ -65,19 +78,27 @@ const LogIn = () => {
           </Form>
         </Container>
       </Row>
-      <Container  className="mt-4 wm-100 d-flex justify-content-center">
+      <Container className="mt-4 wm-100 d-flex justify-content-center">
         <Button
-        className="singUpButton wm-25"
+          className="singUpButton wm-25"
           onClick={() => navigate("/SignUpForm")}
         >
           don't have account ? sign up
         </Button>
       </Container>
-      <Container className="mt-4 wm-100 d-flex justify-content-center ">
-          <Alert className="invisible wm-50"  key={"danger"} variant={"danger"}>
-            this account does not exist, please check your email or password
-          </Alert>
+      <Fade in={open}>
+      <Container className="mt-4 wm-100 d-flex justify-content-center alertContainer">
+        <Alert
+         id="example-fade-text"
+          className="h-25 wm-50 d-flex  align-items-center"
+          key={"danger"}
+          variant={"danger"}
+        >
+          this account does not exist, please check your email or password
+        </Alert>
       </Container>
+      </Fade>
+
     </Container>
   );
 };

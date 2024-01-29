@@ -1,15 +1,21 @@
-import NavBar from "./components/NavBar"
-import GameModeCarousel from "./components/Carousel"
-import { Container } from "react-bootstrap";
+import NavBar from "./components/NavBar";
+import GameModeCarousel from "./components/Carousel";
+import CreateButton from "./components/CreateButton";
+import Footer from "../assets/Footer";
+import { Container, Row } from "react-bootstrap";
 
 const HomePage = () => {
   return (
-    <>
-      <Container className="secondaryColor vh-100 mw-100 p-0">
-        <NavBar/>
-        <GameModeCarousel/>
+  
+      <Container className=" mw-100 vh-100 d-flex flex-column secondaryColor" >
+        <Row>
+          <NavBar />
+          <CreateButton />
+          <GameModeCarousel />
+          <Footer/>
+        </Row>
       </Container>
-    </>
+   
   );
 };
 
