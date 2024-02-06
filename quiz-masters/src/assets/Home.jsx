@@ -8,11 +8,11 @@ const HomePage = () => {
   return (
   
       <Container className=" mw-100 vh-100 d-flex flex-column secondaryColor" >
-        <Row>
+        <Row className="vh-100 d-flex justify-content-center">
           <NavBar />
           <CreateButton />
-          <GameModeCarousel />
-          <Footer/>
+          <GameModeCarousel />         
+          <Footer/>         
         </Row>
       </Container>
    

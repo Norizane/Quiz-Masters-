@@ -14,7 +14,7 @@ import { dataBase } from "../../../FirebaseConfig";
 const NavBar = () => {
 
   const logOut = useNavigate();
-
+  const navigate = useNavigate();
   const handleLogOut = async () => {
     await signOut(dataBase);
     localStorage.removeItem('token')
@@ -23,7 +23,7 @@ const NavBar = () => {
   }
 
   return (
-    <Container className="mw-100 p-0 m-0 secondaryColor">
+    <Container className="mw-100 p-0 m-0 ">
       <Navbar key={false} expand={false} className=" mb-3 ">
         <Container fluid className="justify-content-center ">
           <Navbar.Toggle
@@ -31,23 +31,21 @@ const NavBar = () => {
             aria-controls={`offcanvasNavbar-expand-${false}`}
           />
           <Navbar.Offcanvas
+            style={{height:'300px', backgroundColor:'#FEFEFA'}}
             id={`offcanvasNavbar-expand-${false}`}
             aria-labelledby={`offcanvasNavbarLabel-expand-${false}`}
             placement="top"
           >
-            <Offcanvas.Header closeButton>
-              <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${false}`}>
-                Quiz Masters
-              </Offcanvas.Title>
-            </Offcanvas.Header>
-            <Offcanvas.Body>
-              <Nav className="flex-grow-1 pe-3 ">
-                <Nav.Link href="#action1">Quizzes</Nav.Link>
-                <Nav.Link href="#action2">Account</Nav.Link>
-                <Nav.Link href="#action2">Settings</Nav.Link>        
+            <Offcanvas.Header closeButton>QuziMasters</Offcanvas.Header>
+            <Offcanvas.Body className=" pb-3 pt-0 d-flex flex-column justify-content-center align-items-center">
+              <Nav className="flex-grow-1  d-flex align-items-center" style={{fontWeight:'bold', fontSize:'20px', color:'#6c757d'}}>
+                <Nav.Link onClick={() => navigate("/HomePage")}>Home</Nav.Link>
+                <Nav.Link onClick={() => navigate("/Create")}>Quizzes</Nav.Link>
+                <Nav.Link onClick={() => navigate("/Account")}>Account</Nav.Link>
+                <Nav.Link onClick={() => navigate("/Settings")}>Settings</Nav.Link>        
               </Nav>
               <Col className="d-flex justify-content-center">
-                <Button onClick={handleLogOut} variant="outline-danger">
+                <Button onClick={handleLogOut} variant="outline-danger" style={{width:'200px'}}>
                   Log Out
                 </Button>
               </Col>

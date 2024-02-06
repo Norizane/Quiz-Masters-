@@ -1,14 +1,14 @@
 import { Container, Col } from "react-bootstrap";
 
 
-const NavBar = () => {
+const Footer = () => {
   return (
     <Container className="secondaryColor">
-      <Col>
-        <h1>Footer</h1>
+      <Col className="text-center" style={{color:'#6c757d'}}>
+        <h1>ARE YOU QUIZ MASTER ?</h1>
       </Col>
     </Container>
   )
 }
 
-export default NavBar;
+export default Footer;
