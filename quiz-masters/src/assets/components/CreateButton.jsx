@@ -1,5 +1,6 @@
-import { Button, Container } from "react-bootstrap";
+import { Button, Col } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
+
 
 const CreateButton = () => {
   const navigate = useNavigate();
@@ -9,11 +10,24 @@ const CreateButton = () => {
   };
 
   return (
-    <Container className="secondaryColor d-flex justify-content-center align-items-start ">
-      <Button onClick={goToCreate} size="lg" variant="outline-secondary" style={{width:'300px'}}>
-        Create New Quiz
-      </Button>
-    </Container>
+  
+      <Col className="d-flex align-items-center justify-content-center mx-2">
+        <Button
+          onClick={goToCreate}
+          size="lg"
+          className="btn-outline-secondary"
+          style={{
+            width: "250px",
+            height: "50px",
+            border: "none",
+            backgroundColor: "#D9DCD6",
+            color: "#6c757d",
+          }}
+        >
+          Create New Quiz
+        </Button>
+      </Col>
+    
   );
 };
 

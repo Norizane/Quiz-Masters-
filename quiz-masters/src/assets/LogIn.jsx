@@ -21,13 +21,7 @@ const LogIn = () => {
    
      navigateToHome("/HomePage")
     } catch (error) {
-     // console.error(error)
      setOpen(true);
-
-     setTimeout(() => {
-      setOpen(false);
-    }, 4000);
-    
     }
 
    }

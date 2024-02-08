@@ -44,11 +44,6 @@ const SignUp = () => {
 
       if (errorMessages.length > 0) {
         setOpen(true);
-
-        setTimeout(() => {
-          setOpen(false);
-        }, 4000);
-        
       }
        
     
