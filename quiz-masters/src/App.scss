@@ -1,76 +1,137 @@
-.logIn{
-  background-color: #D9DCD6;
+$primaryColor: #15616D;
+$secondaryColor: #D9DCD6;
+$millionairesPrimaryColor: #A393BF;
+$millionairesSecondaryColor: #672A4E;
+$jeopardyPrimaryColor: #16425B;
+$jeopardySecondaryColor: #FCA311;
 
-  .titleContainer{
+.primaryColor {
+  background-color: $primaryColor;
+}
+
+.secondaryColor {
+  background-color: $secondaryColor;
+}
+
+.millionairesPrimaryColor {
+  background-color: $millionairesPrimaryColor;
+}
+
+.millionairesSecondaryColor {
+  background-color: $millionairesSecondaryColor;
+}
+
+.jeopardyPrimaryColor {
+  background-color: $jeopardyPrimaryColor;
+}
+
+.jeopardySecondaryColor {
+  background-color: $jeopardySecondaryColor;
+}
+
+.color{
+ background-color: #037171;
+}
+
+
+.alertInvisible{
+  visibility: hidden;
+}
+
+.alertVisible{
+  visibility: visible;
+}
+
+.alertContainer{
+min-height: 200px;
+}
+
+.navbar-toggler:focus{
+  box-shadow: none;
+}
+
+.navbar-toggler{
+  border: 0;
+}
+.logIn {
+  background-color: $secondaryColor;
+
+  .titleContainer {
     padding-bottom: 90px;
 
-    .title{
+    .title {
       font-size: 100px;
-      color: white;
+      color: $primaryColor;
     }
+    .btn:focus,.btn:active {
+      outline: none !important;
+      box-shadow: none;
+   }
   }
 
-  .logInForm{
-    background-color: #15616D;
+  .logInForm {
+    background-color: $primaryColor;
     width: 550px;
     height: 350px;
   }
 
-  .logInInputs{
+  .logInInputs {
     outline: none;
     width: 400px;
   }
 
-  .singUpButton{
-    background-color: #15616D;
+  .singUpButton {
+    background-color: $primaryColor;
   }
 
-  .form-control::placeholder { 
+  .form-control::placeholder {
     color: white;
-  
+
   }
 
 }
 
 
 
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+  background-color: #A393BF;
+}
 
-
-.singUp{
+.singUp {
   background-color: #15616D;
 
-  .titleContainer{
+  .titleContainer {
     padding-bottom: 90px;
 
-    .title{
+    .title {
       font-size: 100px;
       color: white;
     }
   }
 
-  .singUpInputs{
+  .singUpInputs {
     outline: none;
     width: 400px;
     color: #15616D;
   }
 
-  .singUpForm{
-    background-color:#D9DCD6;
+  .singUpForm {
+    background-color: #D9DCD6;
     width: 550px;
     height: 350px;
   }
 
-  .form-control::placeholder { 
-    color:#15616D;
-  
+  .form-control::placeholder {
+    color: #15616D;
+
   }
 
-  .singUpButton{
+  .singUpButton {
     background-color: #D9DCD6;
     color: #15616D;
   }
 
-  .submitButton{
+  .submitButton {
     color: #15616D;
   }
 }
