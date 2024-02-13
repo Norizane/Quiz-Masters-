@@ -93,7 +93,9 @@ min-height: 200px;
 
 
 
-
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+  background-color: #A393BF;
+}
 
 .singUp {
   background-color: #15616D;

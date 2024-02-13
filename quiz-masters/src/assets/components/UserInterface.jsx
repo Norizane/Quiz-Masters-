@@ -37,7 +37,7 @@ const UserInterface = () => {
           ></div>
         </Col>
       </Row>
-      <Row>
+      <Row className="mb-3">
         <Col>
           {" "}
           <ProgressBar variant="success" now={40} />

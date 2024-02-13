@@ -21,7 +21,7 @@ const NavBar = () => {
   }
 
   return (
-    <Container style={{backgroundColor:'white'}}  className="mw-100 p-0 m-0 rounded-bottom">
+    <Container style={{backgroundColor:'white'}}  className="mw-100 p-0 m-0">
       <Navbar key={false} expand={false}>
         <Container fluid className="justify-content-center ">
           <Navbar.Toggle

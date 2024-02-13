@@ -1,21 +1,19 @@
 import { useNavigate } from "react-router-dom";
-import NavBar from "../NavBar";
+import NavBar from "../../NavBar";
 import { Row, Col, Card, Button, Container } from "react-bootstrap";
-const Millionaires = () => {
+const Jeopardy = () => {
   const navigate = useNavigate();
-
   return (
-  
-      <Container className="mw-100 vh-100" style={{backgroundColor:'#D9DCD6'}}>
+    <Container className="mw-100 vh-100" style={{backgroundColor:'#D9DCD6'}}>
       <NavBar />
         <Row>
           <Col className="mt-5 mx-4 text-center">
-            <h1 style={{ color: "#A393BF" }}>Millionaires</h1>
+            <h1 style={{ color: "#FCA311" }}>Jeopardy</h1>
           </Col>
         </Row>
         <Row>
           <Col className="mb-4 text-center d-flex justify-content-center">
-            <p style={{ color: "#672A4E", width:'600px'  }}>
+            <p style={{ color: "#15616D", width:'600px'  }}>
               {" "}
               Welcome to 'Who Wants to Be a Millionaire'! Are you ready for an
               exciting adventure? Answer increasingly difficult questions,
@@ -34,11 +32,11 @@ const Millionaires = () => {
               style={{ height: "400px", width: "400px" }}
             >
               <Card.Body className="d-flex justify-content-center align-items-center">
-                <Card.Title style={{ color: "#A393BF", fontSize: "64px" }}>
+                <Card.Title style={{ color: "#15616D", fontSize: "64px" }}>
                 Grafika
                 </Card.Title>
               </Card.Body>
-              <Card.Footer className="millionairesPrimaryColor rounded-bottom d-flex justify-content-center">
+              <Card.Footer style={{ backgroundColor: "#15616D" }} className="rounded-bottom d-flex justify-content-center">
                 <Button
                   size="lg" 
                   onClick={() => navigate("/Millionaires")}
@@ -55,11 +53,11 @@ const Millionaires = () => {
               style={{ height: "400px", width: "400px" }}
             >
               <Card.Body className="d-flex justify-content-center align-items-center">
-                <Card.Title style={{ color: "#A393BF", fontSize: "64px" }}>
+                <Card.Title style={{ color: "#15616D", fontSize: "64px" }}>
                  Grafika
                 </Card.Title>
               </Card.Body>
-              <Card.Footer className="millionairesPrimaryColor rounded-bottom d-flex justify-content-center">
+              <Card.Footer style={{ backgroundColor: "#15616D" }} className="rounded-bottom d-flex justify-content-center">
                 <Button
                   size="lg"
                   onClick={() => navigate("/Millionaires")}
@@ -72,8 +70,7 @@ const Millionaires = () => {
           </Col>
         </Row>
       </Container>
-   
-  );
-};
+  )
+}
 
-export default Millionaires;
+export default Jeopardy;

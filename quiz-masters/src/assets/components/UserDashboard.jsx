@@ -1,13 +1,13 @@
-import CreateButton from "./CreateButton"
+import Logo from "./Logo"
 import UserInterface from "./UserInterface"
 import { Row,Col } from "react-bootstrap"
 const UserDashboard = () => {
   return (
     <Row
     style={{ backgroundColor: "white" }}
-    className="secondaryColor d-flex justify-content-around align-items-center shadow-sm rounded"
+    className="secondaryColor d-flex justify-content-around align-items-center shadow-sm rounded-bottom"
     >
-    <CreateButton/>
+    <Logo/>
     <Col>
     <UserInterface/>
     </Col>

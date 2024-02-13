@@ -27,7 +27,7 @@ const QuizContainers = () => {
                 </Card.Title>
               </Card.Body>
               <Card.Footer className="jeopardyPrimaryColor rounded-bottom">
-                <Button variant="outline-light">Create</Button>
+                <Button onClick={() => navigate('/Jeopardy')} variant="outline-light">Create</Button>
               </Card.Footer>
             </Card>
             <Card className="rounded" style={{ height: "400px", width: "400px" }}>
